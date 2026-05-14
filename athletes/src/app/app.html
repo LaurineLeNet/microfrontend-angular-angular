@@ -1,0 +1,42 @@
+<div class="athletes">
+
+  <div class="athletes-header">
+    <h2>Course des athlètes</h2>
+    <span class="distance-label">{{ raceDistance }}m</span>
+  </div>
+
+  @for (athlete of athletes(); track athlete.name) {
+    <div class="athlete-card" [class.athlete-card--finished]="athlete.finished">
+
+      <div class="athlete-info">
+        <span class="athlete-name">{{ athlete.name }}</span>
+        <span class="athlete-distance">{{ athlete.distance }}m</span>
+        @if (athlete.finished) {
+          <span class="badge-finished">Arrivé !</span>
+        }
+      </div>
+
+      <div class="track">
+        <div class="track-fill" [style.width.%]="progress(athlete)">
+          <span class="runner">🏃</span>
+        </div>
+      </div>
+
+      <button
+        class="btn-advance"
+        [disabled]="athlete.finished"
+        (click)="advance(athlete.name)"
+      >
+        Avancer
+      </button>
+    </div>
+  }
+
+  @if (raceFinished()) {
+    <div class="race-over">
+      <span class="race-over-label">Course terminée !</span>
+      <button class="btn-reset" (click)="reset()">Rejouer</button>
+    </div>
+  }
+
+</div>

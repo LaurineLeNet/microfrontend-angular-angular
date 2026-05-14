@@ -1,0 +1,66 @@
+<div class="ranking">
+
+  <div class="ranking-header">
+    <h2>Classement en direct</h2>
+    @if (hasData()) {
+      <span class="badge-live">LIVE</span>
+    }
+  </div>
+
+  @if (!hasData()) {
+    <div class="waiting">
+      <span class="waiting-dot"></span>
+      <span>En attente des données athletes...</span>
+    </div>
+
+  } @else {
+    <table class="ranking-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Athlète</th>
+          <th>Distance</th>
+          <th>Progression</th>
+          <th>Statut</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (entry of rankings(); track entry.name) {
+          <tr [class.row-finished]="entry.finished">
+
+            <td class="col-rank">
+              @if (entry.rank === 1) { 🥇 }
+              @else if (entry.rank === 2) { 🥈 }
+              @else { <span class="col-rank-num">{{ entry.rank }}</span> }
+            </td>
+
+            <td class="col-name" [class.col-name--leader]="entry.rank === 1" [class.col-name--other]="entry.rank !== 1">
+              {{ entry.name }}
+            </td>
+
+            <td class="col-distance">{{ entry.distance }}m</td>
+
+            <td class="col-progress">
+              <div class="progress-wrap">
+                <div class="progress-bar">
+                  <div class="progress-fill" [style.width.%]="progress(entry.distance)"></div>
+                </div>
+                <span class="progress-pct">{{ progress(entry.distance) }}%</span>
+              </div>
+            </td>
+
+            <td>
+              @if (entry.finished) {
+                <span class="badge badge--done">Arrivé</span>
+              } @else {
+                <span class="badge badge--running">En course</span>
+              }
+            </td>
+
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+
+</div>

@@ -1,0 +1,50 @@
+.dashboard {
+  display: flex;
+  height: calc(100vh - 52px);
+}
+
+.panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: center;
+  padding: 10px 24px;
+  background-color: #fdd7e1;
+  border-bottom: 1px solid #ee0b6f;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.panel-header--athletes {
+  color: #430099;
+
+}
+
+.panel-header--ranking {
+  color: #1155cc;
+
+}
+
+.panel-body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.panel-divider {
+  width: 1px;
+  background: #ee0b6f;
+  flex-shrink: 0;
+}
+
+.loading {
+  padding: 2rem;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
