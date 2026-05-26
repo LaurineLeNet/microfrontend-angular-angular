@@ -56,7 +56,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       loadRemoteModule('athletes', './Component'),
       loadRemoteModule('ranking',  './Component'),
     ]);
-    this.pendingAthletes = athletesMod.App;
+    this.pendingAthletes = athletesMod.RaceComponent;
     this.pendingRanking  = rankingMod.App;
     this.mountIfReady();
   }

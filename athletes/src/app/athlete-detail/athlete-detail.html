@@ -1,0 +1,48 @@
+<div class="athlete-detail">
+  <a [routerLink]="['..', 'list']" class="btn-back">← Retour à la liste</a>
+
+  <h2>{{ profile.firstName }} {{ profile.lastName }}</h2>
+
+  <!-- Profil -->
+  <div class="detail-card">
+    <h3 class="card-title">Profil</h3>
+
+    <div class="detail-row">
+      <span class="detail-label">Nom</span>
+      <span class="detail-value">{{ profile.lastName }}</span>
+    </div>
+
+    <div class="detail-row">
+      <span class="detail-label">Prénom</span>
+      <span class="detail-value">{{ profile.firstName }}</span>
+    </div>
+
+    <div class="detail-row">
+      <span class="detail-label">Date de naissance</span>
+      <span class="detail-value">{{ profile.birthDate }}</span>
+    </div>
+  </div>
+
+  <!-- Dernières courses -->
+  <div class="detail-card">
+    <h3 class="card-title">Dernières courses</h3>
+
+    <div class="races-table">
+      <div class="races-header">
+        <span>Course</span>
+        <span>Date</span>
+        <span>Position</span>
+        <span>Temps</span>
+      </div>
+
+      @for (race of profile.recentRaces; track race.name) {
+        <div class="races-row">
+          <span>{{ race.name }}</span>
+          <span>{{ race.date }}</span>
+          <span class="race-position">{{ race.position }}<sup>ème</sup></span>
+          <span>{{ race.time }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</div>

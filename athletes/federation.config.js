@@ -4,7 +4,8 @@ module.exports = withNativeFederation({
   name: 'athletes',
 
   exposes: {
-    './Component': './src/app/app.ts',
+    './Component': './src/app/race/race.ts',
+    './Routes': './src/app/app.routes.ts',
   },
 
   shared: {

@@ -1,0 +1,12 @@
+<div class="athletes-list">
+  <h2>Liste des athlètes</h2>
+
+  <div class="list">
+    @for (athlete of athletes; track athlete.name) {
+      <a [routerLink]="['..', 'detail', athlete.name]" class="athlete-item">
+        <span class="athlete-item-name">{{ athlete.name }}</span>
+        <span class="athlete-item-arrow">→</span>
+      </a>
+    }
+  </div>
+</div>

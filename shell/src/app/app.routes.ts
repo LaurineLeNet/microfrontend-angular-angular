@@ -9,8 +9,8 @@ export const routes: Routes = [
   },
   {
     path: 'athletes',
-    loadComponent: () =>
-      loadRemoteModule('athletes', './Component').then((m) => m.App),
+    loadChildren: () =>
+      loadRemoteModule('athletes', './Routes').then((m) => m.routes),
   },
   {
     path: 'ranking',

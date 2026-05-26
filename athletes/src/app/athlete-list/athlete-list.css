@@ -1,0 +1,47 @@
+.athletes-list {
+  padding: 24px;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #D5CEE9;
+  min-height: 100%;
+}
+
+.athletes-list h2 {
+  margin: 0 0 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #430099;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.athlete-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #430099;
+  background: #B9AFDA;
+  text-decoration: none;
+  color: #430099;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.athlete-item:hover {
+  background: #6850AF;
+  color: #fff;
+}
+
+.athlete-item-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.athlete-item-arrow {
+  font-size: 1.5rem;
+}
