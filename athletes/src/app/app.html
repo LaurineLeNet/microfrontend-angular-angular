@@ -1,10 +1,10 @@
 <nav class="subnav">
   <span class="subnav-brand">Athletes</span>
-  <a [routerLink]="isSubRoute() ? ['..'] : ['']"
+  <a [routerLink]="courseLink()"
      routerLinkActive="active"
      [routerLinkActiveOptions]="{ exact: true }"
      class="subnav-link">Course</a>
-  <a [routerLink]="isSubRoute() ? ['..', 'list'] : ['list']"
+  <a [routerLink]="listLink()"
      routerLinkActive="active"
      class="subnav-link">Liste</a>
 </nav>
