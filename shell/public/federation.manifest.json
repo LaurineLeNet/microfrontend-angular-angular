@@ -1,5 +1,4 @@
 {
-  "athletes": "http://localhost:4201/remoteEntry.json",
-  "ranking": "http://localhost:4202/remoteEntry.json"
+  "athletes": "https://mf-angular-athletes.lenetlaurine.workers.dev/remoteEntry.json",
+  "ranking": "https://mf-angular-ranking.lenetlaurine.workers.dev/remoteEntry.json"
 }
-
